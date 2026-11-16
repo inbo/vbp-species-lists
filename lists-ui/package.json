@@ -22,12 +22,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@inbo/vbp-branding": "^1.0.13",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@inbo/vbp-branding": "^1.0.15",
     "@mantine/core": "^7.17.8",
     "@mantine/dropzone": "^7.17.8",
     "@mantine/form": "^7.17.8",
