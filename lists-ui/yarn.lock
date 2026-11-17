@@ -507,10 +507,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/retry/-/retry-0.4.3.tgz#c2b9d2e374ee62c586d3adbea87199b1d7a7a6ba"
   integrity sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==
 
-"@inbo/vbp-branding@^1.0.15":
-  version "1.0.15"
-  resolved "https://npm.pkg.github.com/download/@inbo/vbp-branding/1.0.15/60ded51d90deaae726449df709badb2d24678b72#60ded51d90deaae726449df709badb2d24678b72"
-  integrity sha512-+oqp6xL8A8bErjH4qqrV+iNxGXeV+PutJU3DEWF9XSdysVFxr9+KOlo8sJwEwP/wNKfcdsU1k8Ir8jVEROUPUA==
+"@inbo/vbp-branding@^1.0.16":
+  version "1.0.16"
+  resolved "https://npm.pkg.github.com/download/@inbo/vbp-branding/1.0.16/0d064cd0003b4b1d8708d7ccd5acb51e81c4f519#0d064cd0003b4b1d8708d7ccd5acb51e81c4f519"
+  integrity sha512-zkD4SWz/7BM0SPtYORnaPhoRaXKG0ueIyVhwYYrTNXtbTpM8q1VnbWVPeVEkDrcvTv7eYaDN1oO/+wHLRHztQA==
 
 "@jridgewell/gen-mapping@^0.3.12", "@jridgewell/gen-mapping@^0.3.5":
   version "0.3.13"
