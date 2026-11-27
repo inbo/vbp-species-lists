@@ -51,14 +51,18 @@ public class LegacyRedirectFilter extends OncePerRequestFilter {
                                     FilterChain filterChain) throws ServletException, IOException {
 
         String requestUri = request.getRequestURI();
+        // Match and redirect relative to the servlet context path (e.g. /api/lists),
+        // otherwise nothing matches and redirects point outside the app
+        String contextPath = request.getContextPath();
+        String pathWithinApp = requestUri.substring(contextPath.length());
 
         // Handle pre-version paths (Biocollect, etc.)
         for (Map.Entry<String, String> entry : preVersionPaths.entrySet()) {
             String path = entry.getKey();
 
-            if (requestUri.startsWith(path)) {
+            if (pathWithinApp.startsWith(path)) {
                 String queryString = request.getQueryString();
-                String newUriWithParams = requestUri.replaceFirst(path, v2Prefix + path) + (queryString != null ? "?" + queryString : "");
+                String newUriWithParams = contextPath + v2Prefix + pathWithinApp + (queryString != null ? "?" + queryString : "");
                 logger.debug("Redirecting pre-version path: " + requestUri + " to " + newUriWithParams);
                 redirect(response, newUriWithParams);
                 return;
@@ -71,8 +75,7 @@ public class LegacyRedirectFilter extends OncePerRequestFilter {
             // Get the path variable 'listId' from the request path
             String pathVariable = requestUri.substring(requestUri.lastIndexOf('/') + 1);
             // String newUri = v2Prefix + "/download/" + pathVariable + (queryString != null ? "?" + queryString : "");
-            // Keep the servlet context path (e.g. /api/lists), otherwise the redirect points outside the app
-            String newUri = request.getContextPath() + v2Prefix + "/download/" + pathVariable; // temp fix for databox TODO: revert once fixed there
+            String newUri = contextPath + v2Prefix + "/download/" + pathVariable; // temp fix for databox TODO: revert once fixed there
             redirect(response, newUri);
             return;
         }
